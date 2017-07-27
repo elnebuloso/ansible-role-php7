@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/elnebuloso/ansible-role-php7.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-php7)
 
-PHP 7.1 for Linux Server.
+PHP 7 for Linux Server.
 
 - replaces elnebuloso/ansible-role-php70
 - replaces elnebuloso/ansible-role-php71
