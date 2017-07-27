@@ -1,0 +1,45 @@
+---
+- name: include os variables
+  include_vars: "{{php7_os}}.yml"
+  when: php7_os is defined and php7_os != ""
+
+################################################################################################
+
+# define os variables
+
+- name: define php7_modules
+  set_fact:
+    php7_modules: "{{__php7_modules}}"
+  when: php7_modules is not defined
+
+- name: define php7_modules_optional
+  set_fact:
+    php7_modules_optional: "{{__php7_modules_optional}}"
+  when: php7_modules_optional is not defined
+
+- name: define php7_apache2_modules
+  set_fact:
+    php7_apache2_modules: "{{__php7_apache2_modules}}"
+  when: php7_apache2_modules is not defined
+
+- name: define php7_apache2_modules_optional
+  set_fact:
+    php7_apache2_modules_optional: "{{__php7_apache2_modules_optional}}"
+  when: php7_apache2_modules_optional is not defined
+
+- name: define php7_command_webserver_restart
+  set_fact:
+    php7_command_webserver_restart: "{{__php7_command_webserver_restart}}"
+  when: php7_command_webserver_restart is not defined
+
+################################################################################################
+
+# setup os
+
+- name: setup {{php7_os}}
+  include: "{{php7_os}}.yml"
+  when: php7_os is defined and php7_os != ""
+
+- name: setup webserver-apache2
+  include: "webserver-apache2.yml"
+  when: php7_os is defined and php7_os != "" and php7_webserver_enabled == true and php7_webserver_type == "apache2"

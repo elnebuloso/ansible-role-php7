@@ -1,0 +1,35 @@
+---
+php7_version: "7.0"
+
+# php settings
+php7_config_timezone: "Europe/Berlin"
+php7_config_post_max_size: "40M"
+php7_config_upload_max_filesize: "10M"
+php7_config_max_execution_time: "30"
+php7_config_max_input_time: "60"
+php7_config_expose_php: "Off"
+
+# set this for using webserver
+php7_webserver_enabled: true
+
+# set this for the webserver types available: apache2
+php7_webserver_type: "apache2"
+
+# the hostname for the webserver to listen
+php7_webserver_hostname: "box.entwickl.de"
+
+# the hostname for the webserver to listen
+php7_webserver_port: "80"
+
+# vhost default
+php7_webserver_vhost_default_enabled: true
+php7_webserver_vhost_default_docroot: "/var/www"
+php7_webserver_vhost_default_options: "Indexes FollowSymLinks"
+php7_webserver_vhost_default_log_level: "warn"
+
+# vhost dynamic
+php7_webserver_vhost_dynamic_enabled: true
+php7_webserver_vhost_dynamic_base: "/var/www"
+php7_webserver_vhost_dynamic_docroot: "public"
+php7_webserver_vhost_dynamic_options: "Indexes FollowSymLinks"
+php7_webserver_vhost_dynamic_log_level: "warn"

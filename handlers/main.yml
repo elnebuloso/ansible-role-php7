@@ -1,0 +1,6 @@
+---
+- name: php7_webserver_restart
+  service:
+    name: "{{php7_command_webserver_restart}}"
+    state: restarted
+  when: php7_webserver_enabled

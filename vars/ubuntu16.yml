@@ -1,0 +1,38 @@
+---
+# php modules to enable
+__php7_modules:
+  - "php{{php7_version}}-apcu"
+  - "php{{php7_version}}-common"
+  - "php{{php7_version}}-curl"
+  - "php{{php7_version}}-gd"
+  - "php{{php7_version}}-geoip"
+  - "php{{php7_version}}-imagick"
+  - "php{{php7_version}}-intl"
+  - "php{{php7_version}}-mbstring"
+  - "php{{php7_version}}-mcrypt"
+  - "php{{php7_version}}-memcache"
+  - "php{{php7_version}}-memcached"
+  - "php{{php7_version}}-mongodb"
+  - "php{{php7_version}}-mysql"
+  - "php{{php7_version}}-sqlite3"
+  - "php{{php7_version}}-xml"
+  - "php{{php7_version}}-yaml"
+  - "php{{php7_version}}-zip"
+
+# php5 modules to enable, optional
+__php7_modules_optional:
+  - "php{{php7_version}}-xdebug"
+
+# apache2 modules to enable
+__php7_apache2_modules:
+  - headers
+  - proxy
+  - proxy_http
+  - rewrite
+  - vhost_alias
+
+# apache2 modules to enable, optional
+__php7_apache2_modules_optional: []
+
+# the command to restart the webserver
+__php7_command_webserver_restart: "apache2"

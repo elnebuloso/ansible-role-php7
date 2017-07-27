@@ -1,0 +1,26 @@
+---
+- name: add php repository
+  apt_repository: repo='ppa:ondrej/php' state=present
+
+- name: install php
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - "php{{php7_version}}-cli"
+
+- name: install php modules
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items: "{{php7_modules}}"
+
+- name: install php modules optional
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items: "{{php7_modules_optional}}"
+
+- name: configure php cli
+  template: src=php/00-provision.ini.tpl dest=/etc/php/{{php7_version}}/cli/conf.d/00-provision.ini
+
+- name: install php apache2
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - "php{{php7_version}}"
+    - libapache2-modsecurity
+  when: php7_webserver_enabled == true and php7_webserver_type == "apache2"
