@@ -1,6 +1,6 @@
 # Ansible Role - PHP 7 for Linux Server
 
-[![Build Status](https://travis-ci.org/elnebuloso/ansible-role-php7.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-php7)
+![abandoned](https://img.shields.io/badge/project-abandoned-red)
 
 PHP 7 for Linux Server.
 
